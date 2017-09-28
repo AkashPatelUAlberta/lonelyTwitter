@@ -25,6 +25,18 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * This is a class responsible to running Lonely
+ * Twitter. It handles various other classes.
+ *
+ * @author team x
+ * @version 1.0
+ * @see Tweet
+ * @see Tweetable
+ * @see CurrentMood
+ * @since 1.0
+ */
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -45,6 +57,11 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
 		clearButton.setOnClickListener(new View.OnClickListener() {
+			/**
+			 * Called when clear button is clicked
+			 *
+			 * @param v	v holds the properties of the button
+			 */
 			public void onClick(View v) {
 				tweets.clear();
 				saveInFile();
@@ -54,6 +71,11 @@ public class LonelyTwitterActivity extends Activity {
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
 
+			/**
+			 * Called when save button is clicked
+			 *
+			 * @param v holds the properties of the button
+			 */
 			public void onClick(View v) {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
@@ -96,6 +118,9 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/**
+	 * This method is responsible for the old tweets to be loaded
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -112,7 +137,11 @@ public class LonelyTwitterActivity extends Activity {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
+	/**
+	 * This method saves the tweets so when the app the reopened,
+	 * the tweets will not be reset.
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,

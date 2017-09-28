@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by apate on 2017-09-13.
+ * This is an interface for tweet
+ *
+ * @author team x
+ * @version 1.0
+ * @see Tweet
+ * @see CurrentMood
+ * @since 1.0
  */
 
 public interface Tweetable {
