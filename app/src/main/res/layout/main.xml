@@ -4,11 +4,12 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <!--Added string resource for 'my old tweets'-->
     <TextView
         android:id="@+id/oldTweetsTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="My old tweets" />
+        android:text="@string/my_old_tweets" />
 
     <ListView
         android:id="@+id/oldTweetsList"

@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
-import junit.framework.TestCase;
+// removed unused import junit.framework.TestCase;
 
 public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2<LonelyTwitterActivity> {
     private Solo solo;
